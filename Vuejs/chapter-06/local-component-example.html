@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <div id="app">
+      <my-component></my-component>
+      <my-component2></my-component2>
+    </div>
+    <script>
+      const Component = {
+        template: "<div>안녕, 지역 컴포넌트로부터</div>",
+      };
+      const Component2 = {
+        template: "<div>안녕, 컴포넌트로부터</div>",
+      };
+      new Vue({
+        el: "#app",
+        components: { myComponent: Component, myComponent2: Component2 },
+      });
+    </script>
+  </body>
+</html>

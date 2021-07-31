@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+	<section id="page1" data-role="page" data-add-back-btn="true" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<h1>버튼과 리스트</h1>
+		</header>
+		<div class="content" data-role="content">
+			<div class="ui-nodisc-icon">
+				<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-b ui-btn-inline">Plus</a> <a href="#"
+					class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-b ui-btn-inline">Minus</a> <a href="#"
+					class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-b ui-btn-inline">Delete</a> <a href="#"
+					class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-btn-b ui-btn-inline">Check</a>
+			</div>
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a">
+					<input type="button" value="버튼1">
+				</div>
+				<div class="ui-block-b">
+					<input type="reset" value="버튼2">
+				</div>
+			</fieldset>
+			<fieldset class="ui-grid-b">
+				<div class="ui-block-a">
+					<input type="button" value="버튼1">
+				</div>
+				<div class="ui-block-b">
+					<input type="reset" value="버튼2">
+				</div>
+				<div class="ui-block-c">
+					<input type="submit" value="버튼3">
+				</div>
+			</fieldset>
+			<div class="ui-corner-all custom-corners">
+				<div class="ui-bar ui-bar-a">
+					<h3>제목입니다</h3>
+				</div>
+				<div class="ui-body ui-body-a">
+					<p>본문내용입니다</p>
+				</div>
+			</div>
+			<ul data-role="listview" data-inset="true">
+				<li>정적리스트1</li>
+				<li data-role="list-divider">구분자</li>
+				<li>정적리스트2<span class="ui-li-count">3</span></li>
+				<li>정적리스트3<span class="ui-li-count">6</span></li>
+			</ul>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#">동적리스트1</a></li>
+				<li data-role="list-divider">구분자</li>
+				<li><a href="#">동적리스트2<span class="ui-li-count">4</span></a></li>
+				<li><a href="#">동적리스트3<span class="ui-li-aside">New</span></a></li>
+			</ul>
+		</div>
+		<footer data-role="footer" data-position="fixed">
+			<h2>주한길</h2>
+		</footer>
+	</section>
+</body>
+</html>

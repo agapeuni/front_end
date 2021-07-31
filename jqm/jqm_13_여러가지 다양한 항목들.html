@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+             <section id="page1" data-role="page" data-add-back-btn="true" data-theme="b">
+                           <header data-role="header" data-position="fixed">
+                                        <h1>여러가지 항목들</h1>
+                                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left ui-btn-icon-notext">뒤로</a> <a href="#"
+                                                      class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left ui-icon-gear">확인</a>
+                                        <div data-role="navbar">
+                                                      <ul>
+                                                                   <li><a href="#" class="ui-btn-active ui-state-persist">메뉴 1</a></li>
+                                                                   <li><a href="#">메뉴 2</a></li>
+                                                                   <li><a href="#">메뉴 3</a></li>
+                                                      </ul>
+                                        </div>
+                           </header>
+                           <div class="content" data-role="content">
+                                        <fieldset data-role="controlgroup" data-type="horizontal">
+                                                      <legend>성별:</legend>
+                                                      <label for="m">남</label> <input type="radio" name="theme" id="m" checked> <label for="f">여</label> <input type="radio" name="theme" id="f">
+                                        </fieldset>
+                                        <div class="ui-field-contain">
+                                                      <label for="name2">이름:</label> <input type="text" name="name2" id="name2" value="" data-clear-btn="true">
+                                        </div>
+                                        <div class="ui-field-contain">
+                                                      <label for="textarea2">메모:</label>
+                                                      <textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
+                                        </div>
+                                        <div class="ui-field-contain">
+                                                      <label for="flip2">플립 스위치:</label> <select name="flip2" id="flip2" data-role="flipswitch">
+                                                                   <option value="off">Off</option>
+                                                                   <option value="on">On</option>
+                                                      </select>
+                                        </div>
+                                        <form>
+                                                      <div data-role="rangeslider">
+                                                                   <label for="range-1a">범위슬라이더:</label> 
+                                                                   <input type="range" name="range-1a" id="range-1a" min="0" max="100" value="40"> 
+                                                                   <label for="range-1b">범위슬라이더:</label>
+                                                                   <input type="range" name="range-1b" id="range-1b" min="0" max="100" value="80">
+                                                      </div>
+                                        </form>
+                                        <div class="ui-field-contain">
+                                                      <label for="slider2">슬라이더:</label> <input type="range" name="slider2" id="slider2" value="0" min="0" max="100" data-highlight="true">
+                                        </div>
+                           </div>
+                           <footer data-role="footer" data-position="fixed">
+                                        <div data-role="navbar">
+                                                      <ul>
+                                                                   <li><a href="#">메뉴 4</a></li>
+                                                                   <li><a href="#">메뉴 5</a></li>
+                                                                   <li><a href="#" class="ui-btn-active ui-state-persist">메뉴 6</a></li>
+                                                      </ul>
+                                        </div>
+                                        <h2>주한길</h2>
+                           </footer>
+             </section>
+</body>
+ 
+</html>

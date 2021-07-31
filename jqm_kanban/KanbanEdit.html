@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	$(function() {
+	})
+</script>
+</head>
+<body>
+	<!-- Kanban Edit -->
+	<section id="kanbanEdit" data-role="dialog" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<a href="#" data-icon="back">취소</a>
+			<h1>Kanban 수정</h1>
+		</header>
+		<div data-role="content">
+			<h1>Kanban 수정</h1>
+			<form name="frmEdit" method="post" action="" data-trasition="none">
+				<div data-role="fieldcontain">
+					<label for="task">Task</label>
+					<!--  -->
+					<input type="text" id="task" name="task" required="required" placeholder="Input Task" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="info">Info</label>
+					<!--  -->
+					<textarea id="info" name="info" placeholder="Input Infomation"></textarea>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="priority">Priority</label>
+					<!--  -->
+					<input type="range" id="priority" min="1" max="9" value="1" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="expire">Expire</label>
+					<!--  -->
+					<input type="date" id="expire" name="expire" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="useyn">Use Y/N</label>
+					<!--  -->
+					<select id="useyn" name="useyn" data-role="slider">
+						<option value="no">No</option>
+						<option value="yes">Yes</option>
+					</select>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal">
+					<legend>Reason</legend>
+					<!--  -->
+					<select id="reason1" name="reason1" data-native-menu="false">
+						<option value="no">No</option>
+						<option value="yes">Yes</option>
+					</select>
+					<!--  -->
+					<select id="reason2" name="reason2" data-native-menu="false">
+						<option value="no">No</option>
+						<option value="yes">Yes</option>
+					</select>
+				</div>
+				<a href="#kanbanDelete" data-role="button" data-rel="dialog" data-icon="minus">삭제</a>
+				<input type="submit" value="저장" data-icon="check" />
+			</form>			
+		</div>
+		<footer data-role="footer" data-position="fixed"> </footer>
+	</section>
+	<!-- Kanban Delete -->
+	<section id="kanbanDelete" data-role="dialog" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<h1>Kanban 삭제</h1>
+		</header>
+		<div class="content" data-role="content">
+			<p>정말 삭제하시겠습니까?</p>
+			<input type="button" value="삭제" data-inline="true" data-icon="delete" />
+			<!--  -->
+			<input type="button" value="취소" data-inline="true" data-icon="back" />
+		</div>
+		<footer data-role="footer" data-position="fixed"> </footer>
+	</section>
+</body>
+</html>

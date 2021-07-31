@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+       <section id="page1" data-role="page" data-add-back-btn="true" data-theme="b">
+               <header data-role="header" data-position="fixed">
+                      <h1>Collapsible</h1>
+                      <div data-role="navbar">
+                              <ul>
+                                     <li><a href="#page1">Collapsible</a></li>
+                                     <li><a href="#page2">Accordion</a></li>
+                              </ul>
+                      </div>
+               </header>
+               <div class="content" data-role="content">
+                      <div data-role="collapsible">
+                              <h3>jQuery Mobile</h3>
+                              <p>jQuery Mobile는 모바일 웹 사이트와 모든 스마트 폰, 태블릿 및 데스크탑 응용 프로그램을 만들 수 있도록 설계된 HTML5 기반 프레임워크입니다.</p>
+                      </div>
+                      <div data-role="collapsible" data-collapsed="false">
+                              <h3>MongoDB</h3>
+                              <p>JSON과 같은 형식으로 데이터를 저장하고 SQL과 유사한 쿼리를 수행 할 수 있는 문서 지향 NoSQL의 데이터베이스입니다.</p>
+                      </div>
+               </div>
+               <footer data-role="footer" data-position="fixed">
+                      <h2>주한길</h2>
+               </footer>
+       </section>
+       <section id="page2" data-role="page" data-add-back-btn="true" data-theme="b">
+               <header data-role="header" data-position="fixed">
+                      <h1>Accordion</h1>
+                      <div data-role="navbar">
+                              <ul>
+                                     <li><a href="#page1">Collapsible</a></li>
+                                     <li><a href="#page2">Accordion</a></li>
+                              </ul>
+                      </div>
+               </header>
+               <div class="content" data-role="content">
+                      <div data-role="collapsible-set">
+                              <div data-role="collapsible">
+                                     <h3>MongoDB</h3>
+                                     <p>JSON과 같은 형식으로 데이터를 저장하고 SQL과 유사한 쿼리를 수행 할 수 있는 문서 지향 NoSQL의 데이터베이스입니다.</p>
+                              </div>
+                              <div data-role="collapsible">
+                                     <h3>AngularJS</h3>
+                                     <p>단일페이지와 데이터중심의 애플리케이션 작성을 용이하게 하는 자바스크립트 웹 프레임워크입니다. </p>
+                              </div>
+                              <div data-role="collapsible">
+                                     <h3>Express</h3>
+                                     <p>NodeJS에서 실행되며 많이 사용되고 있는 웹 애플리케이션 프레임 워크입니다. </p>                  
+                              </div>
+                              <div data-role="collapsible">
+                                     <h3>Node.js</h3>
+                                     <p>Chrome의 V8 엔진을 사용해서 빠르고 쉬우며 확장가능한 네트워크 어플리케이션입니다.</p>
+                              </div>
+                      </div>
+               </div>
+               <footer data-role="footer" data-position="fixed">
+                      <h2>주한길</h2>
+               </footer>
+       </section>
+</body>
+ 
+</html>

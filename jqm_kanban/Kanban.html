@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/jquery.mobile.js"></script>
+<script>
+	$(function() {
+		// Plan
+		$.getJSON("./json/plan.json", function(planList) {
+			var planOut = '';
+			$.each(planList, function(i, plan) {
+				planOut += '<li id=' + plan.id +'><a href="#">';
+				planOut += '<h4>' + plan.id + '</h4>';
+				planOut += '<h2>' + plan.name + '</h2>';
+				planOut += '<span class="ui-li-count">' + plan.priority + '</span>';
+				planOut += '<p>' + plan.info + '</p>';
+				planOut += '</a></li>';
+			});
+			$('#listPlan').html(planOut);
+			$('#listPlan').trigger("create");
+		});
+		// Todo
+		$.getJSON("./json/todo.json", function(todoList) {
+			var todoOut = '';
+			$.each(todoList, function(i, todo) {
+				todoOut += '<li id=' + todo.id +'>';
+				todoOut += '<a href="#">' + (i + 1) + ". " + todo.id + ' - ' + todo.name + '</a></li>';
+			});
+			$('#listTodo').html(todoOut);
+			$('#listTodo').trigger("create");
+		});
+		// Doing
+		$.getJSON("./json/doing.json", function(doingList) {
+			var doingOut = '';
+			$.each(doingList, function(i, doing) {
+				doingOut += '<li id=' +  doing.id +'>';
+				doingOut += '<a href="#">' + (i + 1) + ". " + doing.id + ' - ' + doing.name + '</a></li>';
+			});
+			$('#listDoing').html(doingOut);
+			$('#listDoing').trigger("create");
+		});
+		// Done
+		$.getJSON("./json/done.json", function(doneList) {
+			var doneOut = '';
+			$.each(doneList, function(i, done) {
+				doneOut += '<li id=' + done.id +'>';
+				doneOut += '<a href="#">' + (i + 1) + ". " + done.id + ' - ' + done.name + '</a></li>';
+			});
+			$('#listDone').html(doneOut);
+			$('#listDone').trigger("create");
+		});
+	})
+</script>
+</head>
+<body>
+	<!-- Home -->
+	<section id="home" data-role="page" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<a href="KanbanAdd.html" data-rel="dialog" data-transition="pop" class="ui-btn ui-icon-plus ui-btn-icon-left">추가</a>
+			<h1>Kanban</h1>
+			<a href="javascript:refresh()" data-icon="refresh">새로코침</a>
+		</header>
+		<div data-role="content">
+			<img src="./img/jqm.png" width="100%" />
+			<h1>Kanban Pilot Project</h1>
+			<div data-role="fieldcontain">
+				<label for="search">Search:</label> <input type="search" id="search" name="search" />
+			</div>
+			<a href="KanbanEdit.html" data-rel="dialog" data-transition="pop" class="ui-btn ui-icon-edit ui-btn-icon-left">수정</a>
+		</div>
+		<footer data-role="footer" data-id="mainFooter" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-icon="home" class="ui-btn-active" data-transition="fade">Home</a></li>
+					<li><a href="#plan" data-icon="info" data-transition="fade">Plan</a></li>
+					<li><a href="#todo" data-icon="alert" data-transition="fade">Todo</a></li>
+					<li><a href="#doing" data-icon="star" data-transition="fade">Doing</a></li>
+					<li><a href="#done" data-icon="check" data-transition="fade">Done</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+	<!-- Plan -->
+	<section id="plan" data-role="page" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<a href="#kanbanAdd" data-transition="slidedown" class="ui-btn ui-icon-plus ui-btn-icon-left">추가</a>
+			<h1>Kanban</h1>
+			<a href="#" data-icon="refresh">새로코침</a>
+		</header>
+		<div data-role="content">
+			<h1>Plan</h1>
+			<ul id="listPlan" data-role="listview" data-inset="true">
+			</ul>
+		</div>
+		<footer data-role="footer" data-id="mainFooter" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#" data-icon="info" class="ui-btn-active" data-transition="fade">Plan</a></li>
+					<li><a href="#todo" data-icon="alert" data-transition="fade">Todo</a></li>
+					<li><a href="#doing" data-icon="star" data-transition="fade">Doing</a></li>
+					<li><a href="#done" data-icon="check" data-transition="fade">Done</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+	<!-- ToDo -->
+	<section id="todo" data-role="page" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<a href="#kanbanAdd" data-transition="slidedown" class="ui-btn ui-icon-plus ui-btn-icon-left">추가</a>
+			<h1>Kanban</h1>
+			<a href="#" data-icon="refresh">새로코침</a>
+		</header>
+		<div data-role="content">
+			<h1>ToDo</h1>
+			<ul id="listTodo" data-role="listview" data-inset="true">
+			</ul>
+		</div>
+		<footer data-role="footer" data-id="mainFooter" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href=#plan data-icon="info" data-transition="fade">Plan</a></li>
+					<li><a href="#" data-icon="info" class="ui-btn-active" data-transition="fade">Todo</a></li>
+					<li><a href="#doing" data-icon="star" data-transition="fade">Doing</a></li>
+					<li><a href="#done" data-icon="check" data-transition="fade">Done</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+	<!-- Doing -->
+	<section id="doing" data-role="page" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<a href="#kanbanAdd" data-transition="slidedown" class="ui-btn ui-icon-plus ui-btn-icon-left">추가</a>
+			<h1>Kanban</h1>
+			<a href="#" data-icon="refresh">새로코침</a>
+		</header>
+		<div data-role="content">
+			<h1>Doing</h1>
+			<ul id="listDoing" data-role="listview" data-inset="true">
+			</ul>
+		</div>
+		<footer data-role="footer" data-id="mainFooter" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#plan" data-icon="info" data-transition="fade">Plan</a></li>
+					<li><a href="#todo" data-icon="info" data-transition="fade">Todo</a></li>
+					<li><a href="#" data-icon="star" class="ui-btn-active" data-transition="fade">Doing</a></li>
+					<li><a href="#done" data-icon="check" data-transition="fade">Done</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+	<!-- Done -->
+	<section id="done" data-role="page" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<a href="#kanbanAdd" data-transition="slidedown" class="ui-btn ui-icon-plus ui-btn-icon-left">추가</a>
+			<h1>Kanban</h1>
+			<a href="#" data-icon="refresh">새로코침</a>
+		</header>
+		<div data-role="content">
+			<h1>Done</h1>
+			<ul id="listDone" data-role="listview" data-inset="true">
+			</ul>
+		</div>
+		<footer data-role="footer" data-id="mainFooter" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+					<li><a href="#plan" data-icon="info" data-transition="fade">Plan</a></li>
+					<li><a href="#todo" data-icon="info" data-transition="fade">Todo</a></li>
+					<li><a href="#doing" data-icon="star" data-transition="fade">Doing</a></li>
+					<li><a href="#" data-icon="check" class="ui-btn-active" data-transition="fade">Done</a></li>
+				</ul>
+			</div>
+		</footer>
+	</section>
+</body>
+</html>

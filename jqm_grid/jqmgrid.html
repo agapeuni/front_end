@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/jquery.mobile.css" />
+<link rel="stylesheet" href="css/ui.jqgrid-mobile.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script language="javascript" src="js/jquerymobile.jqGrid.min.js" id="s1"></script>
+<script language="javascript" src="js/grid.locale-en.js"></script>
+<script src="js/jquery.mobile.js"></script>
+<script>
+	$(function() {
+		// http://www.guriddo.net/demo/mobile/indexdemo.html
+	})
+</script>
+</head>
+<body>
+	<div id="page" data-role="page" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<h1>jqGrid Mobile</h1>
+		</header>
+		<table id='grid'></table>
+		<div id='pager'></div>
+		<script type='text/javascript'>
+			jQuery('#grid').jqGrid(
+			{
+				"hoverrows" : false,
+				"viewrecords" : true,
+				"jsonReader" : {
+					"repeatitems" : false,
+					"subgrid" : {
+						"repeatitems" : false
+					}
+				},
+				"gridview" : true,
+				"loadonce" : true,
+				"url" : "./json/data.json",
+				"scrollPaging" : true,
+				"autowidth" : true,
+				"rowNum" : 20,
+				"rowList" : [ 20, 40, 60 ],
+				"sortname" : "OrderID",
+				"height" : 200,
+				"datatype" : "json",
+				"colModel" : [ {
+					"name" : "OrderID",
+					"index" : "OrderID",
+					"sorttype" : "int",
+					"key" : true,
+					"width" : 80,
+					"editable" : true
+				}, {
+					"name" : "OrderDate",
+					"index" : "OrderDate",
+					"sorttype" : "datetime",
+					"formatter" : "date",
+					"formatoptions" : {
+						"srcformat" : "Y-m-d H:i:s",
+						"newformat" : "m/d/Y"
+					},
+					"editable" : true
+				}, {
+					"name" : "ShipName",
+					"index" : "ShipName",
+					"sorttype" : "string",
+					"editable" : true
+				}, {
+					"name" : "Freight",
+					"index" : "Freight",
+					"sorttype" : "numeric",
+					"editable" : true
+				} ],
+				"loadError" : function(xhr, status, err) {
+					try {
+						jQuery.jgrid.info_dialog(jQuery.jgrid.errors.errcap, '<div class="ui-state-error">' + xhr.responseText + '</div>', jQuery.jgrid.edit.bClose, {buttonalign : 'right'});
+					} catch (e) {
+						alert(xhr.responseText);
+					}
+				},
+				"pager" : "#pager",
+				"editurl" : "nosavedata"
+			});
+			
+			jQuery('#grid').jqGrid('navGrid', '#pager', {
+				add : true,
+				edit : true,
+				del : true
+			}, {
+				reloadAfterSubmit : false
+			}, {
+				reloadAfterSubmit : false,
+				closeAfterAdd : true
+			}, {
+				reloadAfterSubmit : false
+			}, {
+				multipleSearch : true
+			});
+			
+			setTimeout(function() {
+				SyntaxHighlighter.highlight({
+					useScriptTags : false
+				}, '')
+			}, 100);
+		</script>
+	</div>
+</body>
+</html>

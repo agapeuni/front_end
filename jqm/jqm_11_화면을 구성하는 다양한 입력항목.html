@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<section id="page1" data-role="page" data-add-back-btn="true" data-theme="b">
+		<header data-role="header" data-position="fixed">
+			<h1>입력항목</h1>
+		</header>
+		<div class="content" data-role="content">
+			<div class="ui-body ui-body-b">
+				<h2>jQuery Mobile</h2>
+				<p>jQuery Mobile는 모바일 웹 사이트와 모든 스마트 폰, 태블릿 및 데스크탑 응용 프로그램을 만들 수 있도록 설계된 HTML5 기반 프레임워크입니다.</p>
+			</div>
+			<div data-role="collapsible">
+				<h1>jQuery Mobile</h1>
+				<p>jQuery Mobile는 모바일 웹 사이트와 모든 스마트 폰, 태블릿 및 데스크탑 응용 프로그램을 만들 수 있도록 설계된 HTML5 기반 프레임워크입니다.</p>
+			</div>
+			
+			<ul data-role="listview" data-inset="true">
+				<li data-role="fieldcontain"><label for="id">아이디: </label> <input type="text" name="id" id="id"
+					placeholder="아이디를 입력하세요." /></li>
+				<li data-role="fieldcontain"><label for="pwd">비번: </label> <input type="password" name="pwd" id="pwd"
+					placeholder="비밀번호를 입력하세요." /></li>
+				<li data-role="fieldcontain"><label for="age">나이: </label> <input type="range" name="age" id="age" min="0"
+					max="120" step="1" value="20" /></li>
+				<li data-role="fieldcontain"><label for="job">직업: </label> <select name="job" id="job" data-icon="info"
+					data-iconpos="left" data-native-menu="false">
+						<option>선택하세요</option>
+						<option>학생</option>
+						<option>회사원</option>
+						<option>자영업</option>
+						<option>주부</option>
+						<option>기타</option>
+				</select></li>
+				<li data-role="fieldcontain"><legend>성별</legend> <label for="sex1">남</label> <input type="radio" value="M"
+					name="sex" id="sex1"> <label for="sex2">여</label> <input type="radio" value="F" name="sex" id="sex2">
+				</li>
+				<li data-role="fieldcontain"><legend>취미</legend> <label for="hobby1">독서</label> <input type="checkbox"
+					value="1" name="hobby" id="hobby1"> <label for="hobby2">영화</label> <input type="checkbox" value="1"
+					name="hobby" id="hobby2"> <label for="hobby3">음악</label> <input type="checkbox" value="1" name="hobby"
+					id="hobby3"> <label for="hobby4">운동</label> <input type="checkbox" value="1" name="hobby" id="hobby4">
+				</li>
+				<li data-role="fieldcontain"><label for="agree">동의: </label> <select name="agree" id="agree" data-role="slider">
+						<option value="N">No</option>
+						<option value="Y" selected>Yes</option>
+				</select></li>
+			</ul>
+		</div>
+		<footer data-role="footer" data-position="fixed">
+			<h2>주한길</h2>
+		</footer>
+	</section>
+</body>
+</html>
