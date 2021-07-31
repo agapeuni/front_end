@@ -1,11 +1,11 @@
-## ¢Ã jqgrid
+## â–£ jqgrid
 
-## ¢Ã jqm
+## â–£ jqm
 
-## ¢Ã jqm_grid
+## â–£ jqm_grid
 
-## ¢Ã jqm_kanban
+## â–£ jqm_kanban
 
-## ¢Ã React
+## â–£ React
 
-## ¢Ã Vuejs
+## â–£ Vuejs
